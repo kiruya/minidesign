@@ -23,7 +23,7 @@ Component({
     formSubmit(e) {
       const formId = e.detail.formId;
       // collect form id
-      if (app.onGetFormId instanceof Function) {
+      if (app.onMDGetFormId instanceof Function) {
         if (app.logMD) {
           console.log(
             '%cMiniDesign - %c获取到FormId：%c%s',
