@@ -11,7 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/skyFi/weapp-components.git"
   },
-  "keywords": [ "wechat", "miniprogram", "design", "UI", "components", "minipro", "minidesign" ],
+  "keywords": [
+    "wechat",
+    "miniprogram",
+    "design",
+    "UI",
+    "components",
+    "minipro",
+    "minidesign"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -24,5 +32,6 @@
   "devDependencies": {
     "@wechat-miniprogram/miniprogram-cli": "0.0.5",
     "lerna": "^3.4.3"
-  }
+  },
+  "dependencies": {}
 }

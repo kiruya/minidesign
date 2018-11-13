@@ -59,6 +59,7 @@ typings/
 # next.js build output
 .next
 
+*.log
 .vscode/
 .idea/
 tmp/

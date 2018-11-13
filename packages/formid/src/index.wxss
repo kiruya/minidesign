@@ -1,0 +1,19 @@
+.component-form-btn {
+  position: static;
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.component-form-btn::after {
+  display: none;
+}
