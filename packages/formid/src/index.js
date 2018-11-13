@@ -23,8 +23,11 @@ Component({
     formSubmit(e) {
       const formId = e.detail.formId;
       // collect form id
-      if (app.onMDGetFormId instanceof Function) {
-        if (app.logMD) {
+      if (
+        app.minidesign instanceof Object &&
+        app.minidesign.onGetFormId instanceof Function
+      ) {
+        if (app.minidesign.log) {
           console.log(
             '%cMiniDesign - %c获取到FormId：%c%s',
             'color: purple; font-weight: bolder',
@@ -33,7 +36,7 @@ Component({
             formId
           );
         }
-        app.onMDGetFormId(formId);
+        app.onGetFormId(formId);
       }
       if (this.data.longPressDuration === 0) {
         this.triggerClick(e);
