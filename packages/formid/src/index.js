@@ -36,7 +36,7 @@ Component({
             formId
           );
         }
-        app.onGetFormId(formId);
+        app.minidesign.onGetFormId(formId);
       }
       if (this.data.longPressDuration === 0) {
         this.triggerClick(e);
