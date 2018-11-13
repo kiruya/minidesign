@@ -1,6 +1,6 @@
 {
   "name": "@minidesign/scroll-view",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
@@ -19,8 +19,13 @@
   "jest": {
     "testEnvironment": "jsdom",
     "testURL": "https://jest.test",
-    "collectCoverageFrom": [ "src/**/*.js" ],
-    "moduleDirectories": [ "node_modules", "src" ]
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
   },
   "publishConfig": {
     "access": "public"
