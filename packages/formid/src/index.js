@@ -170,43 +170,78 @@ Component({
     },
     // 用户点击该按钮时，会返回获取到的用户信息，回调的detail数据与wx.getUserInfo返回的一致 open-type="getUserInfo"
     ongetuserinfo(e) {
-      this.triggerEvent('getuserinfo', e, {
-        bubbles: this.data.bubbles,
-        composed: this.data.composed,
-        capturephase: this.data.capturephase
-      });
+      this.triggerEvent(
+        'getuserinfo',
+        {
+          event: e,
+          payload: this.data.payload
+        },
+        {
+          bubbles: this.data.bubbles,
+          composed: this.data.composed,
+          capturephase: this.data.capturephase
+        }
+      );
     },
     // 客服消息回调 open-type="contact"
     oncontact(e) {
-      this.triggerEvent('contact', e, {
-        bubbles: this.data.bubbles,
-        composed: this.data.composed,
-        capturephase: this.data.capturephase
-      });
+      this.triggerEvent(
+        'contact',
+        {
+          event: e,
+          payload: this.data.payload
+        },
+        {
+          bubbles: this.data.bubbles,
+          composed: this.data.composed,
+          capturephase: this.data.capturephase
+        }
+      );
     },
     // 获取用户手机号回调 open-type="getPhoneNumber"
     ongetphonenumber(e) {
-      this.triggerEvent('getphonenumber', e, {
-        bubbles: this.data.bubbles,
-        composed: this.data.composed,
-        capturephase: this.data.capturephase
-      });
+      this.triggerEvent(
+        'getphonenumber',
+        {
+          event: e,
+          payload: this.data.payload
+        },
+        {
+          bubbles: this.data.bubbles,
+          composed: this.data.composed,
+          capturephase: this.data.capturephase
+        }
+      );
     },
     // 当使用开放能力时，发生错误的回调 open-type="launchApp"
     onerror(e) {
-      this.triggerEvent('error', e, {
-        bubbles: this.data.bubbles,
-        composed: this.data.composed,
-        capturephase: this.data.capturephase
-      });
+      this.triggerEvent(
+        'error',
+        {
+          event: e,
+          payload: this.data.payload
+        },
+        {
+          bubbles: this.data.bubbles,
+          composed: this.data.composed,
+          capturephase: this.data.capturephase
+        }
+      );
     },
     // 在打开授权设置页后回调 open-type="openSetting"
     onopensetting(e) {
-      this.triggerEvent('opensetting', e, {
-        bubbles: this.data.bubbles,
-        composed: this.data.composed,
-        capturephase: this.data.capturephase
-      });
+      this.triggerEvent(
+        'opensetting',
+        {
+          event: e,
+          payload: this.data.payload
+        },
+        {
+          bubbles: this.data.bubbles,
+          composed: this.data.composed,
+          capturephase: this.data.capturephase
+        }
+      );
     }
   }
 });
