@@ -32,6 +32,7 @@
     "type": "git",
     "url": ""
   },
+  "homepage": "https://github.com/skyFi/weapp-components/tree/master/packages/formid",
   "publishConfig": {
     "access": "public"
   },
