@@ -1,0 +1,21 @@
+{
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "useTabs": false,
+  "cssEnable": [ "css", "less", "scss", "postcss", "wxss" ],
+  "overrides": [
+    {
+      "files": "*.wxml",
+      "options": {
+        "parser": "vue"
+      }
+    },
+    {
+      "files": "*.wxss",
+      "options": {
+        "parser": "css"
+      }
+    }
+  ]
+}

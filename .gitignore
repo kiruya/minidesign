@@ -1,6 +1,5 @@
 # Logs
 logs
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -59,3 +58,12 @@ typings/
 
 # next.js build output
 .next
+
+.vscode/
+.idea/
+tmp/
+miniprogram_dist
+miniprogram_dev
+node_modules
+coverage
+package-lock.json
