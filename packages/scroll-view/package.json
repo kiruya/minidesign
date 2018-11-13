@@ -57,5 +57,5 @@
     "webpack": "^4.16.5",
     "webpack-node-externals": "^1.7.2"
   },
-  "gitHead": "8f49e7b38c3f6c1576f76305de2357737bbce5c4"
+  "gitHead": "d99da830e6fa349e2bc60a1793c2daff35b0febd"
 }
