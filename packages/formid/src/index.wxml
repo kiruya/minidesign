@@ -1,5 +1,5 @@
-<form report-submit bindsubmit="formSubmit">
-  <button class="component-form-btn {{className}}" form-type="submit" lang="zh_CN" bindtouchstart="touchstart" bindtouchcancel="touchcancel" bindtouchend="touchend" open-type="{{openType}}">
+<form report-submit bindsubmit="formSubmit" class="form-class">
+  <button class="component-form-btn btn-class" form-type="submit" lang="zh_CN" bindtouchstart="touchstart" bindtouchcancel="touchcancel" bindtouchend="touchend" open-type="{{openType}}">
     <slot></slot>
   </button>
 </form>

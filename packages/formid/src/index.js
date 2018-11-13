@@ -1,15 +1,12 @@
 const app = getApp();
 Component({
+  externalClasses: ['btn-class', 'form-class'],
   properties: {
     payload: {
       type: null,
       value: {}
     },
     openType: {
-      type: String,
-      value: ''
-    },
-    className: {
       type: String,
       value: ''
     },
