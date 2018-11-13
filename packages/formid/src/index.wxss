@@ -9,7 +9,7 @@
   font-size: unset;
   text-align: unset;
   text-decoration: unset;
-  line-height: 2unset;
+  line-height: unset;
   border-radius: unset;
   -webkit-tap-highlight-color: unset;
   overflow: unset;

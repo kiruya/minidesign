@@ -22,10 +22,18 @@ Component({
   methods: {
     formSubmit(e) {
       const formId = e.detail.formId;
-
       // collect form id
       if (app.onGetFormId instanceof Function) {
-        app.onGetFormId(formId);
+        if (app.logMD) {
+          console.log(
+            '%cMiniDesign - %c获取到FormId：%c%s',
+            'color: purple; font-weight: bolder',
+            'color: blue; font-weight: bold;',
+            'color: red;',
+            formId
+          );
+        }
+        app.onMDGetFormId(formId);
       }
       if (this.data.longPressDuration === 0) {
         this.triggerClick(e);
