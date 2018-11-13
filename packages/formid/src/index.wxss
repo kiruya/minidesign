@@ -1,17 +1,20 @@
 .component-form-btn {
-  position: static;
   display: block;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  border: none;
-  border-radius: 0;
-  background-color: transparent;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-  box-sizing: border-box;
+  position: unset;
+  margin-left: unset;
+  margin-right: unset;
+  padding-left: unset;
+  padding-right: unset;
+  box-sizing: unset;
+  font-size: unset;
+  text-align: unset;
+  text-decoration: unset;
+  line-height: 2unset;
+  border-radius: unset;
+  -webkit-tap-highlight-color: unset;
+  overflow: unset;
+  color: unset;
+  background-color: unset;
 }
 
 .component-form-btn::after {

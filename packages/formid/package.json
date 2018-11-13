@@ -4,6 +4,7 @@
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
+    "precommit": "npm run build",
     "dev": "gulp dev --develop",
     "watch": "gulp watch --develop --watch",
     "build": "gulp",
