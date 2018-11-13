@@ -24,20 +24,25 @@ Component({
       const formId = e.detail.formId;
       // collect form id
       if (
-        app.minidesign instanceof Object &&
-        app.minidesign.onGetFormId instanceof Function
+        app.minidesign instanceof Function &&
+        app.minidesign() instanceof Object
       ) {
-        if (app.minidesign.log) {
-          console.log(
-            '%cMiniDesign - %c获取到FormId：%c%s',
-            'color: purple; font-weight: bolder',
-            'color: blue; font-weight: bold;',
-            'color: red;',
-            formId
-          );
+        const config = app.minidesign();
+
+        if (config.onGetFormId instanceof Function) {
+          if (config.log) {
+            console.log(
+              '%cMiniDesign - %c获取到FormId：%c%s',
+              'color: purple; font-weight: bolder',
+              'color: blue; font-weight: bold;',
+              'color: red;',
+              formId
+            );
+          }
+          config.onGetFormId(formId);
         }
-        app.minidesign.onGetFormId(formId);
       }
+
       if (this.data.longPressDuration === 0) {
         this.triggerClick(e);
       }
