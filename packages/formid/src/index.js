@@ -22,7 +22,6 @@ Component({
   methods: {
     formSubmit(e) {
       const formId = e.detail.formId;
-      // collect form id
       if (
         app.minidesign instanceof Function &&
         app.minidesign() instanceof Object
