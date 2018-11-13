@@ -1,5 +1,5 @@
 <form report-submit bindsubmit="formSubmit" class="form-class">
-  <button class="component-form-btn btn-class" form-type="submit" lang="zh_CN" bindtouchstart="touchstart" bindtouchcancel="touchcancel" bindtouchend="touchend" open-type="{{openType}}">
+  <button class="component-form-btn btn-class" form-type="submit" lang="{{lang}}" bindtouchstart="touchstart" bindtouchcancel="touchcancel" bindtouchend="touchend" open-type="{{openType}}" bindgetuserinfo="ongetuserinfo" bindcontact="oncontact" bindgetphonenumber="ongetphonenumber" binderror="onerror" bindopensetting="onopensetting" session-from="{{sessionfrom}}" send-message-title="{{sendmessagetitle}}" send-message-path="{{sendmessagepath}}" send-message-img="{{sendmessageimg}}" show-message-card="{{sendmessagecard}}" app-parameter="{{appparameter}}">
     <slot></slot>
   </button>
 </form>

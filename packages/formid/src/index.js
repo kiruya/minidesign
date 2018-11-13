@@ -2,17 +2,70 @@ const app = getApp();
 Component({
   externalClasses: ['btn-class', 'form-class'],
   properties: {
+    // 荷载器
     payload: {
       type: null,
       value: {}
     },
-    openType: {
+    // 对应 button 的 open-type，开放类型种类
+    opentype: {
       type: String,
       value: ''
     },
+    // 长按触发时间
     longPressDuration: {
       type: Number,
       value: 0
+    },
+    // 事件是否冒泡
+    bubbles: {
+      type: Boolean,
+      value: false
+    },
+    // 事件是否可以穿越组件边界，为false时，事件将只能在引用组件的节点树上触发，不进入其他任何组件内部
+    composed: {
+      type: Boolean,
+      value: false
+    },
+    // 事件是否拥有捕获阶段
+    capturephase: {
+      type: Boolean,
+      value: false
+    },
+    // 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文 open-type="getUserInfo"
+    lang: {
+      type: String,
+      value: 'zh_CN'
+    },
+    // 会话来源 open-type="contact"
+    sessionfrom: {
+      type: String,
+      value: ''
+    },
+    // 会话内消息卡片标题 open-type="contact"
+    sendmessagetitle: {
+      type: String,
+      value: '当前标题'
+    },
+    // 会话内消息卡片点击跳转小程序路径 open-type="contact"
+    sendmessagepath: {
+      type: String,
+      value: '当前分享路径'
+    },
+    // 会话内消息卡片图片 open-type="contact"
+    sendmessageimg: {
+      type: String,
+      value: '截图'
+    },
+    // 显示会话内消息卡片 open-type="contact"
+    sendmessagecard: {
+      type: Boolean,
+      value: false
+    },
+    // 打开 APP 时，向 APP 传递的参数 open-type="launchApp"
+    appparameter: {
+      type: String,
+      value: '@minidesign/formid'
     }
   },
   data: {
@@ -114,6 +167,46 @@ Component({
           composed: false
         }
       );
+    },
+    // 用户点击该按钮时，会返回获取到的用户信息，回调的detail数据与wx.getUserInfo返回的一致 open-type="getUserInfo"
+    ongetuserinfo(e) {
+      this.triggerEvent('getuserinfo', e, {
+        bubbles: this.data.bubbles,
+        composed: this.data.composed,
+        capturephase: this.data.capturephase
+      });
+    },
+    // 客服消息回调 open-type="contact"
+    oncontact(e) {
+      this.triggerEvent('contact', e, {
+        bubbles: this.data.bubbles,
+        composed: this.data.composed,
+        capturephase: this.data.capturephase
+      });
+    },
+    // 获取用户手机号回调 open-type="getPhoneNumber"
+    ongetphonenumber(e) {
+      this.triggerEvent('getphonenumber', e, {
+        bubbles: this.data.bubbles,
+        composed: this.data.composed,
+        capturephase: this.data.capturephase
+      });
+    },
+    // 当使用开放能力时，发生错误的回调 open-type="launchApp"
+    onerror(e) {
+      this.triggerEvent('error', e, {
+        bubbles: this.data.bubbles,
+        composed: this.data.composed,
+        capturephase: this.data.capturephase
+      });
+    },
+    // 在打开授权设置页后回调 open-type="openSetting"
+    onopensetting(e) {
+      this.triggerEvent('opensetting', e, {
+        bubbles: this.data.bubbles,
+        composed: this.data.composed,
+        capturephase: this.data.capturephase
+      });
     }
   }
 });

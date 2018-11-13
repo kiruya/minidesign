@@ -4,12 +4,12 @@
   "semi": true,
   "singleQuote": true,
   "useTabs": false,
-  "cssEnable": [ "css", "less", "scss", "postcss", "wxss" ],
+  "cssEnable": ["css", "less", "scss", "postcss", "wxss"],
   "overrides": [
     {
       "files": "*.wxml",
       "options": {
-        "parser": "vue"
+        "parser": "html"
       }
     },
     {
@@ -17,6 +17,10 @@
       "options": {
         "parser": "css"
       }
+    },
+    {
+      "files": "*.md",
+      "options": { "parser": "markdown" }
     }
   ]
 }
