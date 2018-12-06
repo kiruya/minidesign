@@ -1,5 +1,5 @@
 .component-form-btn {
-  display: block;
+  /* display: block;
   position: unset;
   margin-left: unset;
   margin-right: unset;
@@ -14,7 +14,7 @@
   -webkit-tap-highlight-color: unset;
   overflow: unset;
   color: unset;
-  background-color: unset;
+  background-color: unset; */
 }
 
 .component-form-btn::after {
