@@ -2,6 +2,8 @@
 
 ## Todolist
 
+- [ ] 多环境配置`@minidesign/config`
+
 - [ ] 自定义头部 `@minidesign/header`
 - [ ] 带下拉刷新和上拉刷新功能的滚动器 `@minidesign/scroll-view`
 - [ ] 自定义页面（自定义头部 + 带下拉刷新和上拉刷新的滚动器） `@minidesign/page`
@@ -26,3 +28,25 @@
 - [ ] 滑动操作`@minidesign/swipe-action` 结合手势操作，从屏幕一侧唤出操作
 - [ ] 富文本编辑器`@minidesign/rich-editor` 用于编辑出富文本
 - [ ] markdown`@minidesign/markdown-editor` Markdown 编辑器
+- [ ] 头像图片剪裁器`@minidesign/image-cropper` 用于裁剪图片
+
+## Create
+
+```bash
+npm run create packages/xxx
+```
+
+修改 tools 文件夹下的 `config.js`文件修改以下：
+
+```javascript
+use: [
+  'babel-loader',
+  // 'eslint-loader'
+],
+```
+
+## Publish
+
+```bash
+npm run publish
+```
