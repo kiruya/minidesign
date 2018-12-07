@@ -1,5 +1,5 @@
 {
-  "name": "image-cropper",
+  "name": "@minidesign/image-cropper",
   "version": "0.0.0",
   "description": "",
   "main": "miniprogram_dist/index.js",
@@ -30,6 +30,10 @@
   "repository": {
     "type": "git",
     "url": ""
+  },
+  "homepage": "https://github.com/skyFi/weapp-components/tree/master/packages/image-cropper",
+  "publishConfig": {
+    "access": "public"
   },
   "author": "skylor",
   "license": "MIT",
