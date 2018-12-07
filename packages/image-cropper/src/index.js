@@ -248,6 +248,7 @@ Component({
      */
     getImg(getCallback) {
       this._draw();
+      const cropper = this.data.cropper;
       wx.canvasToTempFilePath(
         {
           width: this.data.width,
@@ -259,7 +260,7 @@ Component({
           canvasId: this.data.el,
           success(res) {
             getCallback && getCallback(res.tempFilePath);
-            this.data.cropper(res.tempFilePath);
+            cropper(res.tempFilePath);
           }
         },
         this
@@ -638,6 +639,7 @@ Component({
         return;
       }
       this._draw();
+      const cropper = this.data.cropper;
       let x = event.detail.x;
       let y = event.detail.y;
       if (
@@ -655,7 +657,7 @@ Component({
             quality: this.data.quality,
             canvasId: this.data.el,
             success: res => {
-              this.data.cropper(res.tempFilePath);
+              cropper(res.tempFilePath);
               this._clickCallback && this._clickCallback(res.tempFilePath);
             }
           },
