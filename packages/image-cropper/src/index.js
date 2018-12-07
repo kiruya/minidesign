@@ -3,13 +3,6 @@ let time;
 Component({
   properties: {
     /**
-     * 触发剪切
-     */
-    cropper: {
-      type: Function,
-      default: () => {}
-    },
-    /**
      * 图片路径
      */
     imgSrc: {
@@ -248,7 +241,7 @@ Component({
      */
     getImg(getCallback) {
       this._draw();
-      const cropper = this.data.cropper;
+      const triggerEvent = this.triggerEvent;
       wx.canvasToTempFilePath(
         {
           width: this.data.width,
@@ -260,7 +253,7 @@ Component({
           canvasId: this.data.el,
           success(res) {
             getCallback && getCallback(res.tempFilePath);
-            cropper(res.tempFilePath);
+            triggerEvent('cropper', res.tempFilePath);
           }
         },
         this
@@ -639,7 +632,7 @@ Component({
         return;
       }
       this._draw();
-      const cropper = this.data.cropper;
+      const triggerEvent = this.triggerEvent;
       let x = event.detail.x;
       let y = event.detail.y;
       if (
@@ -657,7 +650,7 @@ Component({
             quality: this.data.quality,
             canvasId: this.data.el,
             success: res => {
-              cropper(res.tempFilePath);
+              triggerEvent('cropper', res.tempFilePath);
               this._clickCallback && this._clickCallback(res.tempFilePath);
             }
           },
