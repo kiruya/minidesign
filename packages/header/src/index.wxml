@@ -1,1 +1,85 @@
-<view class="index">{{prop}}</view>
+<view class="land" style="padding-top: {{statusBarHeight}}px; height: {{height}}px;"></view>
+<!-- fashion mode -->
+<view wx:if="{{mode === 'fashion'}}" class="header-container container-class" style="padding-top: {{statusBarHeight}}px; height: {{height}}px; background-color: {{backgroundcolor}};" animation="{{animation}}">
+  <view wx:if="{{showMenu}}" class="left left-class" style="padding-left: {{menuRect.left}}px;top: {{statusBarHeight}}px;">
+    <view class="menu menu-class {{menustyle}}" style="width: {{menuRect.width}}px; height: {{menuRect.height}}px; border-radius: {{menuRect.height}}px; ">
+      <view class="menu-left" bindtap="navigateBack">
+        <image wx:if="{{menustyle === 'dark'}}" class="back" src="./back.png"></image>
+        <image wx:else class="back" src="./back-light.png"></image>
+      </view>
+      <view class="gap {{menustyle}}"></view>
+      <view class="menu-right" bindtap="navigateBackHome">
+        <image wx:if="{{menustyle === 'dark'}}" class="home" src="./home.png"></image>
+        <image wx:else class="home" src="./home-light.png"></image>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{title}}" class="middle title-class {{menustyle}}">{{title}}</view>
+  <block wx:else>
+    <slot></slot>
+  </block>
+</view>
+<!-- classic mode -->
+<view wx:if="{{mode === 'classic'}}" class="header-container container-class" style="padding-top: {{statusBarHeight}}px; height: {{height}}px; background-color: {{backgroundcolor}};" animation="{{animation}}">
+  <view wx:if="{{showMenu}}" class="left left-class" style="padding-left: {{mode === 'classic' ? '16' : menuRect.left}}px;top: {{statusBarHeight}}px;">
+    <view class="menu-classic" style="width: {{menuRect.width}}px; height: {{menuRect.height}}px; border-radius: {{menuRect.height}}px;" bindtap="navigateBack">
+      <image wx:if="{{menustyle === 'dark'}}" class="back" src="./back.png"></image>
+      <image wx:else class="back" src="./back-light.png"></image>
+    </view>
+  </view>
+  <view wx:if="{{title}}" class="middle title-class {{menustyle}}">{{title}}</view>
+  <block wx:else>
+    <slot></slot>
+  </block>
+</view>
+<!-- custom mode -->
+<view wx:if="{{mode === 'custom'}}" class="header-container container-class" style="padding-top: {{statusBarHeight}}px; height: {{height}}px; background-color: {{backgroundcolor}};" animation="{{animation}}">
+  <view class="left left-class" style="top: {{statusBarHeight}}px;">
+    <slot name="left"></slot>
+  </view>
+  <view class="middle title-class">
+    <slot name="title"></slot>
+  </view>
+</view>
+<!-- cover-classic mode -->
+<cover-view wx:if="{{mode === 'cover-classic'}}" class="header-container container-class" style="padding-top: {{statusBarHeight}}px; height: {{height}}px; background-color: {{backgroundcolor}};" animation="{{animation}}">
+  <cover-view wx:if="{{showMenu}}" class="left left-class" style="padding-left: {{mode === 'classic' ? '16' : menuRect.left}}px;top: {{statusBarHeight}}px;">
+    <cover-view class="menu-classic" style="width: {{menuRect.width}}px; height: {{menuRect.height}}px; border-radius: {{menuRect.height}}px;" bindtap="navigateBack">
+        <cover-image wx:if="{{menustyle === 'dark'}}" class="back" src="./back.png"></cover-image>
+        <cover-image wx:else class="back" src="./back-ligh.png"></cover-image>
+    </cover-view>
+  </cover-view>
+  <cover-view wx:if="{{title}}" class="middle title-class {{menustyle}}">{{title}}</cover-view>
+  <block wx:else>
+    <slot></slot>
+  </block>
+</cover-view>
+<!-- cover-fashion mode -->
+<cover-view wx:if="{{mode === 'cover-fashion'}}" class="header-container container-class" style="padding-top: {{statusBarHeight}}px; height: {{height}}px; background-color: {{backgroundcolor}};" animation="{{animation}}">
+  <cover-view wx:if="{{showMenu}}" class="left left-class" style="padding-left: {{menuRect.left}}px;top: {{statusBarHeight}}px;">
+    <cover-view class="menu menu-class {{menustyle}}" style="width: {{menuRect.width}}px; height: {{menuRect.height}}px; border-radius: {{menuRect.height}}px; ">
+      <cover-view class="menu-left" bindtap="navigateBack">
+        <cover-image wx:if="{{menustyle === 'dark'}}" class="back" src="./back.png"></cover-image>
+        <cover-image wx:else class="back" src="./back-ligh.png"></cover-image>
+      </cover-view>
+      <cover-view class="gap {{menustyle}}"></cover-view>
+      <cover-view class="menu-right" bindtap="navigateBackHome">
+        <cover-image wx:if="{{menustyle === 'dark'}}" class="home" src="./home.png"></cover-image>
+        <cover-image wx:else class="home" src="./home-light.png"></cover-image>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-view wx:if="{{title}}" class="middle title-class {{menustyle}}">{{title}}</cover-view>
+  <block wx:else>
+    <slot></slot>
+  </block>
+</cover-view>
+<!-- cover-custom mode -->
+<cover-view wx:if="{{mode === 'custom'}}" class="header-container container-class" style="padding-top: {{statusBarHeight}}px; height: {{height}}px; background-color: {{backgroundcolor}};" animation="{{animation}}">
+  <cover-view class="left left-class" style="top: {{statusBarHeight}}px;">
+    <slot name="left"></slot>
+  </cover-view>
+  <cover-view class="middle title-class">
+    <slot name="title"></slot>
+  </cover-view>
+</cover-view>

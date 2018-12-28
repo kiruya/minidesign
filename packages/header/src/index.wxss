@@ -1,3 +1,97 @@
-.index {
-  color: green;
+.header-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-sizing: content-box;
+  z-index: 10086;
+}
+
+.header-container.show {
+  display: flex;
+}
+.header-container.hide {
+  display: none;
+}
+
+.left {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.left.show {
+  display: flex;
+}
+.left.hide {
+  display: none;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1rpx rgba(0, 0, 0, 0.05) solid;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.menu.dark {
+  border: 1rpx rgba(0, 0, 0, 0.05) solid;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+.menu.light {
+  border: 1rpx rgba(255, 255, 255, 0.85) solid;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.menu-classic {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.menu-left,
+.menu-right {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.gap {
+  height: 32rpx;
+  width: 1rpx;
+}
+.gap.dark {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.gap.light {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.back {
+  width: 20rpx;
+  height: 36rpx;
+}
+
+.home {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.middle {
+  font-size: 34rpx;
+}
+
+.middle.dark {
+  color: #333333;
+}
+
+.middle.light {
+  color: #ffffff;
 }
