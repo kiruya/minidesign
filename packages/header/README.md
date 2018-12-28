@@ -39,7 +39,7 @@
 | Name            | Type                 | Default             | Description                                                                                                            |
 | --------------- | -------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | mode            | string               | 'classic'           | 模式，可选值： `'fashion' | 'classic' | 'cover-fashion' | 'cover-classic' | 'custom' | 'cover-custom'`                 |
-| title           | string / void        | ''                  | 标题，会被默认`slot`覆盖                                                                                               |
+| title           | string / void        | ''                  | 标题，默认取小程序`app.json`文件的配置值，会覆盖默认`slot`                                                                                               |
 | backgroundcolor | string / void        | '#ffffff'           | 背景颜色，正确的颜色值都可                                                                                            |
 | animation       | AnimationData / void | {}                  | 动画 Data                                                                                                              |
 | height          | number / void        | 自适应              | 头部高度，默认自适应，推荐默认                                                                                         |
