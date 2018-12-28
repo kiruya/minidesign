@@ -4,7 +4,7 @@
 
 - [ ] 多环境配置`@minidesign/config`
 
-- [ ] 自定义头部 [`@minidesign/header`](https://github.com/kiruya/minidesign/tree/master/packages/header)
+- [x] 自定义头部 [`@minidesign/header`](https://github.com/kiruya/minidesign/tree/master/packages/header)
 - [ ] 带下拉刷新和上拉刷新功能的滚动器 `@minidesign/scroll-view`
 - [ ] 自定义页面（自定义头部 + 带下拉刷新和上拉刷新的滚动器） `@minidesign/page`
 - [ ] 弹窗`@minidesign/modal`
