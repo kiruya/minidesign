@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skyFi/weapp-components.git"
+    "url": "git+https://github.com/kiruya/minidesign.git"
   },
   "keywords": [
     "wechat",
@@ -27,9 +27,9 @@
   "author": "skylor",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/skyFi/weapp-components/issues"
+    "url": "https://github.com/kiruya/minidesign/issues"
   },
-  "homepage": "https://github.com/skyFi/weapp-components#readme",
+  "homepage": "https://github.com/kiruya/minidesign#readme",
   "devDependencies": {
     "@wechat-miniprogram/miniprogram-cli": "0.0.5",
     "lerna": "^3.4.3"

@@ -30,6 +30,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "homepage": "https://github.com/kiruya/minidesign/tree/master/packages/formid",
   "author": "skylor",
   "license": "MIT",
   "devDependencies": {

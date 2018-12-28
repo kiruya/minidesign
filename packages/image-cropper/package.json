@@ -31,7 +31,7 @@
     "type": "git",
     "url": ""
   },
-  "homepage": "https://github.com/skyFi/weapp-components/tree/master/packages/image-cropper",
+  "homepage": "https://github.com/kiruya/minidesign/tree/master/packages/image-cropper",
   "publishConfig": {
     "access": "public"
   },
