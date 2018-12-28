@@ -1,8 +1,11 @@
 # @minidesign/header
 
 微信小程序自定义`header`。
-![](./doc_img/fashion.png)
-![](./doc_img/classic.png)
+
+
+* ![](./doc_img/fashion.png)
+* ![](./doc_img/classic.png)
+
 
 ## Install
 
