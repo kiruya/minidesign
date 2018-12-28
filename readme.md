@@ -1,12 +1,12 @@
 # Weapp-Components
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FskyFi%2Fweapp-components.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FskyFi%2Fweapp-components?ref=badge_shield)
 
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FskyFi%2Fweapp-components.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FskyFi%2Fweapp-components?ref=badge_shield)
 
 ## Todolist
 
 - [ ] 多环境配置`@minidesign/config`
 
-- [ ] 自定义头部 `@minidesign/header`
+- [ ] 自定义头部 [`@minidesign/header`](https://github.com/skyFi/weapp-components/tree/master/packages/header)
 - [ ] 带下拉刷新和上拉刷新功能的滚动器 `@minidesign/scroll-view`
 - [ ] 自定义页面（自定义头部 + 带下拉刷新和上拉刷新的滚动器） `@minidesign/page`
 - [ ] 弹窗`@minidesign/modal`
@@ -53,6 +53,6 @@ use: [
 npm run publish
 ```
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FskyFi%2Fweapp-components.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FskyFi%2Fweapp-components?ref=badge_large)
