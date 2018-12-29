@@ -3,8 +3,8 @@
 微信小程序自定义`header`。
 
 
-* ![](./doc_img/fashion.png)
-* ![](./doc_img/classic.png)
+* ![](https://github.com/kiruya/minidesign/tree/master/packages/header/doc_img/fashion.png)
+* ![](https://github.com/kiruya/minidesign/tree/master/packages/header/doc_img/classic.png)
 
 
 ### Install
@@ -54,13 +54,13 @@
 
 #### `fashion`，流行模式
 
-![](./doc_img/fashion.png)
+![](https://github.com/kiruya/minidesign/tree/master/packages/header/doc_img/fashion.png)
 
 拥有胶囊菜单，包含【返回】、【首页】两大功能，自动识别当前为首页时菜单不展示
 
 #### `classic`，经典模式
 
-![](./doc_img/classic.png)
+![](https://github.com/kiruya/minidesign/tree/master/packages/header/doc_img/classic.png)
 
 拥有经典返回菜单，包含【返回】功能，自动识别当前为首页时菜单不展示。
 
