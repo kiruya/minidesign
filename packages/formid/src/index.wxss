@@ -1,4 +1,4 @@
-.component-form-btn {
+button {
   display: block;
   position: unset;
   margin-left: unset;
