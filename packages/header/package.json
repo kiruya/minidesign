@@ -1,6 +1,6 @@
 {
   "name": "@minidesign/header",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.2",
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
