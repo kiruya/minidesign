@@ -1,4 +1,4 @@
-/* .component-form-btn {
+.component-form-btn {
   display: block;
   position: unset;
   margin-left: unset;
@@ -15,7 +15,7 @@
   overflow: unset;
   color: unset;
   background-color: unset;
-} */
+}
 
 .component-form-btn::after {
   display: none;
