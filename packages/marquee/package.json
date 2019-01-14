@@ -1,5 +1,5 @@
 {
-  "name": "marquee",
+  "name": "@minidesign/marquee",
   "version": "0.0.5",
   "description": "",
   "main": "miniprogram_dist/index.js",
