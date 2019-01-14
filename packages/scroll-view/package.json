@@ -1,6 +1,6 @@
 {
   "name": "@minidesign/scroll-view",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
