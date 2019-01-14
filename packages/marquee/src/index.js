@@ -6,7 +6,7 @@ Component({
      */
     fixed: {
       type: Boolean,
-      value: false,
+      value: false
     },
     /**
      * 需要跑马灯的文字
@@ -72,17 +72,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onTap(){
+    onTap() {
       this.triggerEvent('tap', {});
     },
     _scrolling() {
-      const timer = setInterval(() => {
+      this._clearTimer();
+      this.timer = setInterval(() => {
         if (Math.abs(this.data.marqueeDistance) < this.data.length) {
           this.setData({
             marqueeDistance: this.data.marqueeDistance - this.data.speed
           });
         } else {
-          clearInterval(timer);
           wx.createSelectorQuery()
             .in(this)
             .select('#second-text')
@@ -95,34 +95,74 @@ Component({
             .exec();
         }
       }, this.data.frequency);
+    },
+    _clearTimer() {
+      if (this.timer) {
+        clearInterval(this.timer);
+        this.timer = null;
+      }
     }
   },
 
   lifetimes: {
+    hide() {
+      this._clearTimer();
+    },
+
+    detached() {
+      this._clearTimer();
+    },
+
     ready() {
-      const windowWidth = wx.getSystemInfoSync().windowWidth;
-      const defaultGap = windowWidth / 3;
-      const match = this.data.gap.match(/\d+/);
-      let gapNum = match ? match[0] || defaultGap : defaultGap;
-      if (/%/.test(this.data.gap)) {
-        gapNum = match ? (match[0] / 100) * windowWidth : defaultGap;
-      }
-      if (/(rpx)$/.test(this.data.gap)) {
-        gapNum = gapNum / 2;
-      }
-      wx.createSelectorQuery()
-        .in(this)
-        .select('#marquee-text')
-        .boundingClientRect(res => {
-          const length = (res.width - gapNum) / 2;
-          const shouldMarquee = length > windowWidth;
-          this.setData({ marqueeDistance: this.data.startPosition, shouldMarquee, gapNum, length, windowWidth, height: res.height }, () => {
-            setTimeout(() => {
-              this.data.shouldMarquee && this._scrolling();
-            }, this.data.delay);
-          });
+      startDoScrolling.call(this);
+
+      this.createIntersectionObserver()
+        .relativeToViewport({
+          top: 0
         })
-        .exec();
+        .observe('.marquee-container', res => {
+          if (res.intersectionRatio > 0) {
+            !this.timer && this._scrolling();
+          } else {
+            this._clearTimer();
+          }
+        });
+
+      function startDoScrolling() {
+        const windowWidth = wx.getSystemInfoSync().windowWidth;
+        const defaultGap = windowWidth / 3;
+        const match = this.data.gap.match(/\d+/);
+        let gapNum = match ? match[0] || defaultGap : defaultGap;
+        if (/%/.test(this.data.gap)) {
+          gapNum = match ? (match[0] / 100) * windowWidth : defaultGap;
+        }
+        if (/(rpx)$/.test(this.data.gap)) {
+          gapNum = gapNum / 2;
+        }
+        wx.createSelectorQuery()
+          .in(this)
+          .select('#marquee-text')
+          .boundingClientRect(res => {
+            const length = (res.width - gapNum) / 2;
+            const shouldMarquee = length > windowWidth;
+            this.setData(
+              {
+                marqueeDistance: this.data.startPosition,
+                shouldMarquee,
+                gapNum,
+                length,
+                windowWidth,
+                height: res.height
+              },
+              () => {
+                setTimeout(() => {
+                  this.data.shouldMarquee && this._scrolling();
+                }, this.data.delay);
+              }
+            );
+          })
+          .exec();
+      }
     }
   }
 });
