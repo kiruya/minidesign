@@ -1,0 +1,11 @@
+<view class="container">
+  <view id="element" class="element" catchtap="onTapBtn">
+    <slot></slot>
+  </view>
+  <view wx:if="{{visible}}" animation="{{menuAnimationData}}" id="menu-box" class="menu-box container-class {{direction}}" style="{{style}}">
+    <block wx:for="{{menus}}" wx:for-index="index" wx:for-item="menu" wx:key="index">
+      <view wx:if="{{index !== 0}}" class="gap"></view>
+      <view class="menu-item" catchtap="onTapMenu" data-index="{{index}}" data-menu="{{menu}}">{{menu}}</view>
+    </block>
+  </view>
+</view>

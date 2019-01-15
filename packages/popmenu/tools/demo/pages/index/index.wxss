@@ -1,0 +1,22 @@
+.image {
+  margin: 16rpx 0;
+  width: 40rpx;
+  height: 8rpx;
+}
+
+.item {
+  display: flex;
+  margin: 60rpx;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.red-menu {
+  background-color: #ff3b3b !important;
+}

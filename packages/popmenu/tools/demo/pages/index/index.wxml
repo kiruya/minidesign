@@ -1,0 +1,10 @@
+<view class="item right">
+  <comp menus="{{['喜欢', '评论']}}" bindselect="onSelect" default-width="{{113}}" payload="{{ {hello: true} }}">
+    <image class="image" src="./three-point.png"></image>
+  </comp>
+</view>
+<view class="item left">
+  <comp menus="{{['喜欢', '评论']}}" direction="right" default-width="{{113}}" bindselect="onSelect" payload="{{ {hello: true} }}" container-class="red-menu">
+    <image class="image" src="./three-point.png"></image>
+  </comp>
+</view>

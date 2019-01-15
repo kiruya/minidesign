@@ -1,0 +1,47 @@
+.container {
+  position: relative;
+}
+
+.element {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: inline-block;
+}
+
+.menu-box {
+  position: absolute;
+  width: 0;
+  opacity: 0;
+  padding: 16rpx 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #424145;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+.menu-item {
+  padding: 0 25rpx;
+  color: white;
+  white-space: pre;
+  font-size: 28rpx;
+}
+
+.menu-item:first-child {
+  padding-left: 32rpx;
+}
+
+.menu-item:last-child {
+  padding-right: 32rpx;
+}
+
+.gap {
+  height: 36rpx;
+  width: 2rpx;
+  background-color: white;
+  opacity: 0.1;
+}
