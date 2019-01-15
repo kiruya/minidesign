@@ -2,6 +2,8 @@
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkiruya%2Fminidesign.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkiruya%2Fminidesign?ref=badge_shield)
 
+获取已经发布的包：[🔍 npm minidesign](https://www.npmjs.com/search?q=minidesign)
+
 ## Todolist
 
 - [x] 封装提交 `formId` 逻辑的组件 [`@minidesign/formid`](https://github.com/kiruya/minidesign/tree/master/packages/formid)
