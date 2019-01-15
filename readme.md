@@ -8,6 +8,7 @@
 - [x] 弹窗[`@minidesign/modal`](https://github.com/kiruya/minidesign/tree/master/packages/modal)
 - [x] 滚动字幕 marquee[`@minidesign/marquee`](https://github.com/kiruya/minidesign/tree/master/packages/marquee)
 - [x] 自定义头部 [`@minidesign/header`](https://github.com/kiruya/minidesign/tree/master/packages/header)
+- [x] 类微信朋友圈点赞评论气泡菜单 [`@minidesign/popmenu`](https://github.com/kiruya/minidesign/tree/master/packages/popmenu)
 - [ ] 多环境配置`@minidesign/config`
 - [ ] 带下拉刷新和上拉刷新功能的滚动器 `@minidesign/scroll-view`
 - [ ] 自定义页面（自定义头部 + 带下拉刷新和上拉刷新的滚动器） `@minidesign/page`
