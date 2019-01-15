@@ -1,16 +1,16 @@
 # Weapp-Components
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkiruya%2Fminidesign.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkiruya%2Fminidesign?ref=badge_shield)
 
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkiruya%2Fminidesign.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkiruya%2Fminidesign?ref=badge_shield)
 
 ## Todolist
 
-- [ ] 多环境配置`@minidesign/config`
-
+- [x] 封装提交 `formId` 逻辑的组件 [`@minidesign/formid`](https://github.com/kiruya/minidesign/tree/master/packages/formid)
+- [x] 弹窗[`@minidesign/modal`](https://github.com/kiruya/minidesign/tree/master/packages/modal)
+- [x] 滚动字幕 marquee[`@minidesign/marquee`](https://github.com/kiruya/minidesign/tree/master/packages/marquee)
 - [x] 自定义头部 [`@minidesign/header`](https://github.com/kiruya/minidesign/tree/master/packages/header)
+- [ ] 多环境配置`@minidesign/config`
 - [ ] 带下拉刷新和上拉刷新功能的滚动器 `@minidesign/scroll-view`
 - [ ] 自定义页面（自定义头部 + 带下拉刷新和上拉刷新的滚动器） `@minidesign/page`
-- [ ] 弹窗`@minidesign/modal`
-- [x] 封装提交 `formId` 逻辑的组件 [`@minidesign/formid`](https://github.com/kiruya/minidesign/tree/master/packages/formid)
 - [ ] 抽屉`@minidesign/drawer` 用于在屏幕边缘显示应用导航等内容的面板
 - [ ] 菜单`@minidesign/Menu` 在一个临时的面板上显示一组操作
 - [ ] 气泡`@minidesign/popover` 在点击控件或者某个区域后，浮出一个气泡菜单来做更多的操作。 如果设置了遮罩层，建议通过点击遮罩层的任一位置，进行退出
@@ -53,6 +53,6 @@ use: [
 npm run publish
 ```
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkiruya%2Fminidesign.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkiruya%2Fminidesign?ref=badge_large)
