@@ -1,6 +1,6 @@
 {
   "name": "@minidesign/popmenu",
-  "version": "0.0.0",
+  "version": "0.0.9",
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
@@ -61,6 +61,5 @@
     "vinyl": "^2.2.0",
     "webpack": "^4.16.5",
     "webpack-node-externals": "^1.7.2"
-  },
-  "dependencies": {}
+  }
 }
