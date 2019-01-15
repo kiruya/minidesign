@@ -1,0 +1,47 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 48rpx 40rpx 0;
+  background-color: white;
+  border-radius: 8rpx;
+}
+
+.modal-title {
+  font-size: 36rpx;
+}
+
+.modal-context {
+  margin-top: 18rpx;
+}
+
+.modal-context-text {
+  font-size: 30rpx;
+  color: #888888;
+}
+
+.purple-color {
+  font-weight: bold;
+  color: #9579ff;
+}
+
+.confirm-btn {
+  margin-top: 48rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-weight: bold;
+  color: white;
+  font-size: 32rpx;
+  text-align: center;
+  background-color: #9579ff;
+  border-radius: 8rpx;
+}
+
+.cancel-btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #98969e;
+  font-size: 26rpx;
+}

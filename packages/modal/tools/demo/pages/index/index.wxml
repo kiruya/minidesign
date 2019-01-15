@@ -1,0 +1,11 @@
+<button bindtap="onShowModal">弹窗</button>
+<comp visible="{{isShowModal}}">
+  <view class="modal">
+    <view class="modal-title">进群提示</view>
+    <view class="modal-context">
+      <text class="modal-context-text">向客服回复“ <text class="purple-color">1</text> ”，获取进群二维码</text>
+    </view>
+    <button class="confirm-btn" open-type="contact" show-message-card="{{true}}">确认</button>
+    <view class="cancel-btn" catchtap="cancel">取消</view>
+  </view>
+</comp>

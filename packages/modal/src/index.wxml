@@ -1,0 +1,5 @@
+<view id="mask" wx:if="{{visible}}" class="mask" animation="{{maskAnimationData}}" catchtap="close">
+  <view id="container" class="container" catchtap="onTapContainer">
+    <slot></slot>
+  </view>
+</view>
