@@ -1,6 +1,6 @@
 {
   "name": "@minidesign/marquee",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
