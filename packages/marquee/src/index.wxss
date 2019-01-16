@@ -1,6 +1,6 @@
 .marquee-container {
   position: relative;
-  width: 100%;
+  overflow: hidden;
 }
 
 .marquee-container.fixed {
@@ -12,8 +12,9 @@
 
 .marquee-text {
   position: absolute;
-  white-space: nowrap;
   top: 0;
+  left: 0;
+  white-space: nowrap;
   pointer-events: none;
 }
 

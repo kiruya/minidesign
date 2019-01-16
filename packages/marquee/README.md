@@ -31,12 +31,12 @@
 
 ## options
 
-| Name        | Type    | Default                               | Description                                                                      |
-| ----------- | ------- | ------------------------------------- | -------------------------------------------------------------------------------- |
-| text        | String  | `Minidesign is best Mini program UI.` | 需要滚动的字幕                                                                   |
-| gap         | String  | `''`                                  | 滚动时字幕间的间隔，带单位，单位可选：`px | rpx | %`，默认值为屏幕宽度的三分之一 |
-| delay       | Number  | `1000`                                | 首次执行延迟，`ms`                                                               |
-| orientation | String  | `'left'`                              | 滚动方向： `left | right`                                                        |
-| fixed       | Boolean | `false`                               | 是否固定在顶部                                                                   |
-| speed       | Number  | `1`                                   | 滚动的速度，单位`px`                                                             |
-| frequency   | Number  | `20`                                  | 更新频率，单位`ms`                                                               |
+| Name            | Type    | Default                               | Description                                                                    |
+| --------------- | ------- | ------------------------------------- | ------------------------------------------------------------------------------ |
+| text            | String  | `Minidesign is best Mini program UI.` | 需要滚动的字幕                                                                 |
+| gap             | String  | `''`                                  | 滚动时字幕间的间隔，间隔的宽度，同 wxss `width` 值，默认值为屏幕宽度的三分之一 |
+| speed           | Number  | `60`                                  | 滚动的速度，单位`px`                                                           |
+| delay           | Number  | `1000`                                | 首次执行延迟，`ms`                                                             |
+| text-class      | String  | `''`                                  | 文字样式`class`                                                                |
+| container-class | String  | `''`                                  | 容器样式`class`                                                                |
+| fixed           | Boolean | `false`                               | 是否固定在顶部                                                                 |

@@ -1,8 +1,8 @@
 <view wx:if="{{fixed}}" class="gap" style="height: {{height}}px"></view>
-<view class="marquee-container {{fixed ? 'fixed' : ''}} container-class" style="height: {{height}}px" catchtap="onTap">
-  <view id="marquee-text" class="marquee-text" style="{{ orientation }}: {{ marqueeDistance }}px;">
+<view class="marquee-container {{fixed ? 'fixed' : ''}} container-class" style="height: {{height}}px">
+  <view animation="{{animationData}}" bindtransitionend="onAnimationEnd" id="marquee-text" class="marquee-text" style="left: {{ startPosition }}px;">
     <view class="text text-class">{{text}}</view>
-    <view wx:if="{{shouldMarquee}}" style="display: inline-block; width: {{gap || '30vw'}}" />
+    <view wx:if="{{shouldMarquee}}" id="gap" style="display: inline-block; width: {{gap || '30vw'}}" />
     <view wx:if="{{shouldMarquee}}" id="second-text" class="text text-class">{{text}}</view>
   </view>
 </view>

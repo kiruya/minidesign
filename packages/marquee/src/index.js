@@ -20,17 +20,10 @@ Component({
      */
     speed: {
       type: Number,
-      value: 1
+      value: 60
     },
     /**
-     * 更新频率
-     */
-    frequency: {
-      type: Number,
-      value: 20
-    },
-    /**
-     * 带单位的间隔，单位可选：px | rpx | vw | vh | %
+     * 间隔的宽度，同 wxss width 值
      */
     gap: {
       type: String,
@@ -48,14 +41,7 @@ Component({
      */
     startPosition: {
       type: Number,
-      value: 0
-    },
-    /**
-     * 方向： left | right
-     */
-    orientation: {
-      type: String,
-      value: 'left'
+      value: 16
     }
   },
 
@@ -65,104 +51,61 @@ Component({
   data: {
     marqueeDistance: 0,
     shouldMarquee: true,
-    height: 50
+    height: 50,
+    animationData: {}
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    onTap() {
-      this.triggerEvent('tap', {});
+    onAnimationEnd(e) {
+      this.animationData.left(this.data.gapWidth).step({ duration: 0 });
+      this.setData({ animationData: this.animationData.export() }, () => {
+        this._animation();
+      });
     },
-    _scrolling() {
-      this._clearTimer();
-      this.timer = setInterval(() => {
-        if (Math.abs(this.data.marqueeDistance) < this.data.length) {
-          this.setData({
-            marqueeDistance: this.data.marqueeDistance - this.data.speed
-          });
-        } else {
-          wx.createSelectorQuery()
-            .in(this)
-            .select('#second-text')
-            .boundingClientRect(res => {
-              this.setData({
-                marqueeDistance: (res || {}).left || 0
-              });
-              this._scrolling();
-            })
-            .exec();
-        }
-      }, this.data.frequency);
-    },
-    _clearTimer() {
-      if (this.timer) {
-        clearInterval(this.timer);
-        this.timer = null;
-      }
+    _animation(distance = this.data.length) {
+      this.animationData = wx.createAnimation({
+        duration: (this.data.length / this.data.speed) * 1000
+      });
+      this.animationData.left(-distance).step({
+        duration: (this.data.length / this.data.speed) * 1000
+      });
+      this.setData({ animationData: this.animationData.export() });
     }
   },
 
   lifetimes: {
-    hide() {
-      this._clearTimer();
-    },
-
-    detached() {
-      this._clearTimer();
-    },
-
     ready() {
-      startDoScrolling.call(this);
+      const windowWidth = wx.getSystemInfoSync().windowWidth;
+      const delayScroll = () => {
+        setTimeout(() => {
+          this._animation();
+        }, this.data.delay);
+      };
 
-      this.createIntersectionObserver()
-        .relativeToViewport({
-          top: 0
-        })
-        .observe('.marquee-container', res => {
-          if (res.intersectionRatio > 0) {
-            !this.timer && this._scrolling();
-          } else {
-            this._clearTimer();
-          }
-        });
-
-      function startDoScrolling() {
-        const windowWidth = wx.getSystemInfoSync().windowWidth;
-        const defaultGap = windowWidth / 3;
-        const match = this.data.gap.match(/\d+/);
-        let gapNum = match ? match[0] || defaultGap : defaultGap;
-        if (/%/.test(this.data.gap)) {
-          gapNum = match ? (match[0] / 100) * windowWidth : defaultGap;
-        }
-        if (/(rpx)$/.test(this.data.gap)) {
-          gapNum = gapNum / 2;
-        }
-        wx.createSelectorQuery()
-          .in(this)
-          .select('#marquee-text')
-          .boundingClientRect(res => {
-            const length = (res.width - gapNum) / 2;
-            const shouldMarquee = length > windowWidth;
-            this.setData(
-              {
-                marqueeDistance: this.data.startPosition,
-                shouldMarquee,
-                gapNum,
-                length,
-                windowWidth,
-                height: res.height
-              },
-              () => {
-                setTimeout(() => {
-                  this.data.shouldMarquee && this._scrolling();
-                }, this.data.delay);
+      this.createSelectorQuery()
+        .select('#marquee-text')
+        .boundingClientRect(res => {
+          const data = { windowWidth };
+          data.height = res.height;
+          this.createSelectorQuery()
+            .select('#gap')
+            .boundingClientRect(gapRect => {
+              data.length = (res.width - gapRect.width) / 2;
+              data.shouldMarquee = data.length >= windowWidth;
+              data.gapWidth = gapRect.width;
+              if (data.shouldMarquee) {
+                this.setData(data, delayScroll);
+              } else {
+                data.length = res.width;
+                this.setData(data);
               }
-            );
-          })
-          .exec();
-      }
+            })
+            .exec();
+        })
+        .exec();
     }
   }
 });
